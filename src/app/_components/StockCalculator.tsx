@@ -1,12 +1,13 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 const StockCalculator = () => {
-  const [lastPrice, setLastPrice] = useState<number | string>('');
+  const [lastPrice, setLastPrice] = useState<number | string>("");
   const [araPrices, setAraPrices] = useState<string[]>([]);
   const [arbPrices, setArbPrices] = useState<string[]>([]);
-  const [error, setError] = useState<string>('');
-  const [recommendation, setRecommendation] = useState<string>('');
+  const [error, setError] = useState<string>("");
+  const [recommendation, setRecommendation] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const percentage = 0.25;
 
@@ -54,56 +55,70 @@ const StockCalculator = () => {
   };
 
   const handleCalculate = () => {
-    const price = typeof lastPrice === 'string' ? parseFloat(lastPrice) : lastPrice;
-    if (price >= 50) {
-      if (isValidPrice(price)) {
-        setAraPrices(calculateARA(price));
-        setArbPrices(calculateARB(price));
-        setError('');
-        setRecommendation('');
+    setLoading(true);
+    const price =
+      typeof lastPrice === "string" ? parseFloat(lastPrice) : lastPrice;
+    setTimeout(() => {
+      if (price >= 50) {
+        if (isValidPrice(price)) {
+          setAraPrices(calculateARA(price));
+          setArbPrices(calculateARB(price));
+          setError("");
+          setRecommendation("");
+        } else {
+          const tickSize = getTickSize(price);
+          const lowerRecommendation = Math.floor(price / tickSize) * tickSize;
+          const upperRecommendation = Math.ceil(price / tickSize) * tickSize;
+          setError(
+            `The price must be an integer and a multiple of the tick size (${tickSize}) for the given price range.`
+          );
+          setRecommendation(
+            `Consider using a price of ${lowerRecommendation} or ${upperRecommendation}.`
+          );
+          setAraPrices([]);
+          setArbPrices([]);
+        }
       } else {
-        const tickSize = getTickSize(price);
-        const lowerRecommendation = Math.floor(price / tickSize) * tickSize;
-        const upperRecommendation = Math.ceil(price / tickSize) * tickSize;
-        setError(`The price must be an integer and a multiple of the tick size (${tickSize}) for the given price range.`);
-        setRecommendation(`Consider using a price of ${lowerRecommendation} or ${upperRecommendation}.`);
+        setError("The price must be at least 50.");
+        setRecommendation("");
         setAraPrices([]);
         setArbPrices([]);
       }
-    } else {
-      setError('The price must be at least 50.');
-      setRecommendation('');
-      setAraPrices([]);
-      setArbPrices([]);
-    }
+      setLoading(false);
+    }, 1000);
   };
 
   return (
-    <div className='h-screen w-screen items-center justify-center flex flex-col'>
-      <h1>Stock Calculator</h1>
-      <input 
-        type="number" 
-        value={lastPrice} 
-        onChange={(e) => setLastPrice(e.target.value)} 
-        placeholder="Enter last price" 
+    <div className="h-screen w-screen items-center justify-center flex flex-col dark:bg-black">
+      <input
+        type="number"
+        value={lastPrice}
+        onChange={(e) => setLastPrice(e.target.value)}
+        placeholder="Enter last price"
       />
-      <button onClick={handleCalculate}>Calculate</button>
-      {error && <p style={{color: 'red'}}>{error}</p>}
-      {recommendation && <p style={{color: 'blue'}}>{recommendation}</p>}
-      <div>
-        <h2>ARA Prices:</h2>
-        <ul>
-          {araPrices.map((price, index) => (
-            <li key={index}>{price}</li>
-          ))}
-        </ul>
-        <h2>ARB Prices:</h2>
-        <ul>
-          {arbPrices.map((price, index) => (
-            <li key={index}>{price}</li>
-          ))}
-        </ul>
-      </div>
+      <button onClick={handleCalculate} disabled={loading}>
+        {loading ? "Calculating..." : "Calculate"}
+      </button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {recommendation && <p style={{ color: "blue" }}>{recommendation}</p>}
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <h2>ARA Prices:</h2>
+          <ul>
+            {araPrices.map((price, index) => (
+              <li key={index}>{price}</li>
+            ))}
+          </ul>
+          <h2>ARB Prices:</h2>
+          <ul>
+            {arbPrices.map((price, index) => (
+              <li key={index}>{price}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

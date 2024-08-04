@@ -1,3 +1,4 @@
+import Footer from "./_components/_layouts/Footer";
 import Navbar from "./_components/_layouts/Navbar";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -22,11 +23,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative w-full flex items-center justify-center">
-          <Navbar className="top-2" />
-          {/* <p className="text-black dark:text-white"> */}
-          {children}
-          {/* </p> */}
+            <Navbar className="top-2" />
+            {/* <p className="text-black dark:text-white"> */}
+            {children}
+            {/* </p> */}
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

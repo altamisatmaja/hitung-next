@@ -1,10 +1,14 @@
 "use client";
 
+import { Boxes } from "@/components/ui/background-boxes";
+import { cn } from "@/lib/utils";
+
 export default function Home() {
   return (
     <>
-      <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <Boxes />
         <div className="relative overflow-hidden">
           <div
             aria-hidden="true"
@@ -14,10 +18,9 @@ export default function Home() {
           <div className="relative z-10">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
               <div className="max-w-2xl text-center mx-auto">
-                {/* <p className="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
+                <p className="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
                   Nano: A vision for 2024
-                </p> */}
-
+                </p>
                 <div className="mt-5 max-w-2xl">
                   <h1 className="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
                     The Intuitive Web Solutions
