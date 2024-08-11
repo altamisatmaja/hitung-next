@@ -2,97 +2,171 @@
 
 import { Boxes } from "@/components/ui/background-boxes";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <Boxes />
-        <div className="relative overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="flex absolute -top-96 start-1/2 transform -translate-x-1/2"
-          ></div>
+      <div className="flex flex-col dark:text-white">
+        <div className="w-full">
+          <div className="bg-gradient-to-bl from-blue-50 to-violet-50 flex items-center justify-center lg:h-screen">
+            <div className="container mx-auto p-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                <div className="bg-white rounded-lg border p-4">
+                  {/* <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image" className="w-full h-48 rounded-md object-cover"> */}
+                  <div className="px-1 py-4">
+                    <div className="font-bold text-xl mb-2">Blog Title</div>
+                    <p className="text-gray-700 text-base">
+                      This is a simple blog card example using Tailwind CSS. You
+                      can replace this text with your own blog content.
+                    </p>
+                  </div>
+                  <div className="px-1 py-4">
+                    <a href="#" className="text-blue-500 hover:underline">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg border p-4">
+                  {/* <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image" className="w-full h-48 rounded-md object-cover"> */}
+                  <div className="px-1 py-4">
+                    <div className="font-bold text-xl mb-2">Blog Title</div>
+                    <p className="text-gray-700 text-base">
+                      This is a simple blog card example using Tailwind CSS. You
+                      can replace this text with your own blog content.
+                    </p>
+                  </div>
+                  <div className="px-1 py-4">
+                    <a href="#" className="text-blue-500 hover:underline">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg border p-4">
+                  {/* <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image" className="w-full h-48 rounded-md object-cover"> */}
+                  <div className="px-1 py-4">
+                    <div className="font-bold text-xl mb-2">Blog Title</div>
+                    <p className="text-gray-700 text-base">
+                      This is a simple blog card example using Tailwind CSS. You
+                      can replace this text with your own blog content.
+                    </p>
+                  </div>
+                  <div className="px-1 py-4">
+                    <a href="#" className="text-blue-500 hover:underline">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg border p-4">
+                  {/* <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image" className="w-full h-48 rounded-md object-cover"> */}
+                  <div className="px-1 py-4">
+                    <div className="font-bold text-xl mb-2">Blog Title</div>
+                    <p className="text-gray-700 text-base">
+                      This is a simple blog card example using Tailwind CSS. You
+                      can replace this text with your own blog content.
+                    </p>
+                  </div>
+                  <div className="px-1 py-4">
+                    <a href="#" className="text-blue-500 hover:underline">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-full relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+          <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+          <Boxes />
+          <div>
+            <section>
+              <section className="sticky">
+                <div className="max-w-lg px-4 sm:pt-24 pt-12 sm:pb-8 mx-auto text-left md:max-w-none md:text-center">
+                  <div className="text-center py-4 hidden sm:block">
+                    <button className="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#00acee"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                      </svg>
+                      &nbsp; &nbsp;<span> Follow on Twitter </span>
+                    </button>
+                  </div>
 
-          <div className="relative z-10">
-            <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-              <div className="max-w-2xl text-center mx-auto">
-                <p className="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
-                  Nano: A vision for 2024
-                </p>
-                <div className="mt-5 max-w-2xl">
-                  <h1 className="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
-                    The Intuitive Web Solutions
+                  <h1 className="font-extrabold leading-10 tracking-tight  text-[#201515] text-center sm:leading-none text-5xl sm:text-9xl">
+                    <span className="inline md:block">Building Good </span>
+                    <span className="relative mt-2 bg-clip-text text-[#201515] md:inline-block">
+                      Software.
+                    </span>
                   </h1>
                 </div>
 
-                <div className="mt-5 max-w-3xl">
-                  <p className="text-lg text-gray-600 dark:text-gray-400">
-                    Preline UI is an open-source set of prebuilt UI components,
-                    ready-to-use examples and Figma design system based on the
-                    utility-first Tailwind CSS framework.
-                  </p>
-                </div>
+                <div className="max-w-lg px-4 pb-24 mx-auto text-left md:max-w-none md:text-center">
+                  <div className="text-center py-4 space-x-4">
+                    <button className="backdrop-blur-sm transition duration-500 ease-in-out bg-[#FF4F01] border border-[#E2E8F0] translate-y-1 text-white hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+                      <span> Build Your Custom App</span>
+                    </button>
 
-                <div className="mt-8 gap-3 flex justify-center">
-                  <a
-                    className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#"
-                  >
-                    Get started
-                    <svg
-                      className="flex-shrink-0 w-4 h-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m9 18 6-6-6-6" />
-                    </svg>
-                  </a>
-                  <a
-                    className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#"
-                  >
-                    <svg
-                      className="flex-shrink-0 w-4 h-4"
-                      width="19"
-                      height="18"
-                      viewBox="0 0 19 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.875 18C8.531 18 9.875 16.656 9.875 15V12H6.875C5.219 12 3.875 13.344 3.875 15C3.875 16.656 5.219 18 6.875 18Z"
-                        fill="#0ACF83"
-                      ></path>
-                      <path
-                        d="M3.875 9C3.875 7.344 5.219 6 6.875 6H9.875V12H6.875C5.219 12 3.875 10.656 3.875 9Z"
-                        fill="#A259FF"
-                      ></path>
-                      <path
-                        d="M3.875 3C3.875 1.344 5.219 0 6.875 0H9.875V6H6.875C5.219 6 3.875 4.656 3.875 3Z"
-                        fill="#F24E1E"
-                      ></path>
-                      <path
-                        d="M9.87501 0H12.875C14.531 0 15.875 1.344 15.875 3C15.875 4.656 14.531 6 12.875 6H9.87501V0Z"
-                        fill="#FF7262"
-                      ></path>
-                      <path
-                        d="M15.875 9C15.875 10.656 14.531 12 12.875 12C11.219 12 9.87501 10.656 9.87501 9C9.87501 7.344 11.219 6 12.875 6C14.531 6 15.875 7.344 15.875 9Z"
-                        fill="#1ABCFE"
-                      ></path>
-                    </svg>
-                    Figma
-                  </a>
+                    <button className="backdrop-blur-sm transition duration-500 ease-in-out bg-white border border-[#E2E8F0] translate-y-1 text-[#16161d] hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+                      <span> Explore Apps</span>
+                    </button>
+                  </div>
                 </div>
+              </section>
+            </section>
+
+            <div className="text-left">
+              <div className="sm:px-28">
+                <section className="relative flex items-center w-full">
+                  <div className="relative items-center w-full px-5 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                    <div className="relative flex-col items-start m-auto align-middle">
+                      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
+                        <div className="relative items-center gap-12 m-auto lg:inline-flex md:order-first">
+                          <div className="max-w-xl text-center lg:text-left">
+                            <div>
+                              <p className="text-3xl font-semibold tracking-tight text-[#201515] sm:text-5xl">
+                                Space Management Software
+                              </p>
+                              <p className="max-w-xl mt-4 text-base tracking-tight text-gray-600">
+                                Use this paragraph to share information about
+                                your company or products. Make it engaging and
+                                interesting, and showcase your brands
+                                personality. Thanks for visiting our website!
+                              </p>
+                            </div>
+                            <div className="flex justify-center gap-3 mt-10 lg:justify-start">
+                              <a
+                                className="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600"
+                                href="#"
+                              >
+                                <span> Read more &nbsp; → </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="order-first block w-full mt-12 aspect-square lg:mt-0">
+                          <Image
+                            className="object-cover rounded-3xl object-center w-full mx-auto bg-gray-300 lg:ml-auto"
+                            alt="hero"
+                            src="https://i.pinimg.com/originals/2e/2b/21/2e2b21aeed393403d4620367f9e093f9.gif"
+                            width={500}
+                            height={500}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
+
+              <div className="mt-32" />
+
+              <section></section>
             </div>
           </div>
         </div>

@@ -8,6 +8,16 @@ const nextConfig = {
         hostname: "saceternity.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        pathname: "**",
+      },
     ],
   },
 };

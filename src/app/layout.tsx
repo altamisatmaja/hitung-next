@@ -22,11 +22,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative w-full flex items-center justify-center">
+          <div className="w-full">
             <Navbar className="top-2" />
-            {/* <p className="text-black dark:text-white"> */}
             {children}
-            {/* </p> */}
           </div>
           <Footer />
         </ThemeProvider>

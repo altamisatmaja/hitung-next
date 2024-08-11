@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-8 mx-auto">
+      <div className="px-6 py-8 mx-auto">
         <div className="flex flex-col items-center text-center">
           {/* <a href="#">
                 <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt=""></img>
