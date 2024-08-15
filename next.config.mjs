@@ -18,6 +18,16 @@ const nextConfig = {
         hostname: "encrypted-tbn0.gstatic.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.builder.io",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "avataaars.com",
+        pathname: "**",
+      },
     ],
   },
 };
