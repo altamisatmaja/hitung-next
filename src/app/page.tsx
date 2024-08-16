@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
+      <div className="min-h-screen bg-white flex justify-center items-center p-6">
         <div className="container mx-auto px-6 py-16 pt-28 text-center">
           <div className="mx-auto max-w-lg">
             <h1 className="text-4xl font-bold text-gray-800  md:text-6xl">
@@ -32,7 +32,7 @@ export default function Home() {
                   type="button"
                   className="m-1 h-10 transform rounded-md bg-blue-500 px-4 py-2 text-white transition-colors duration-300 hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
                 >
-                  Join Us
+                  Hitung
                 </button>
               </form>
             </div>
@@ -520,7 +520,7 @@ export default function Home() {
                   Get your blog
                 </h3>
                 <h4 className="mt-2 text-base text-gray-700">
-                  That's it. You will get back a professional blog.
+                  Thats it. You will get back a professional blog.
                 </h4>
               </div>
             </li>

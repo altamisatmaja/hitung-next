@@ -28,7 +28,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-white font-semibold text-lg hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -43,7 +43,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-blue-600  backdrop-blur-sm rounded-xl overflow-hidden border border-black/[0.2]  shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -67,7 +67,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-xl border border-transparent  bg-blue-600 shadow-input flex justify-center space-x-10 px-8 py-6 "
     >
       {children}
     </nav>
@@ -86,7 +86,7 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-3">
       <Image
         src={src}
         width={140}
@@ -95,12 +95,8 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-2xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
-        <p className="text-neutral-700 text-lg max-w-[10rem] dark:text-neutral-300">
-          {description}
-        </p>
+        <h4 className="text-3xl font-bold mb-1 text-white ">{title}</h4>
+        <p className="text-neutral-700 text-xl max-w-[10rem] ">{description}</p>
       </div>
     </Link>
   );
@@ -108,10 +104,7 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
-    >
+    <Link {...rest} className="text-neutral-700 hover:text-black ">
       {children}
     </Link>
   );
